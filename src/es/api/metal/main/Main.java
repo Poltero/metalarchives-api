@@ -6,7 +6,7 @@ package es.api.metal.main;
 import java.util.List;
 
 import es.api.metal.dto.AlbumDTO;
-import es.api.metal.impl.MetalArchivesApi;
+import es.api.metal.dto.BandDTO;
 
 /**
  * @author pablo
@@ -18,16 +18,11 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		MetalArchivesApi api = new MetalArchivesApi();
+		BandDTO band = new BandDTO();
+		band.setId("305");
 		
-		long timeStart = System.currentTimeMillis();
+		List<AlbumDTO> albums = band.getAlbums();
 		
-		List<AlbumDTO> albums = api.getAlbums("305");
-		
-		long timeEnd = System.currentTimeMillis();
-		long time = timeEnd-timeStart;
-		
-		System.out.println("Request and Response time: "+ time + " ms\n\n");
 		
 		for(AlbumDTO a: albums) {
 			System.out.println("Nombre: " + a.getName());

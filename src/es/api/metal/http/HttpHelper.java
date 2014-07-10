@@ -51,7 +51,7 @@ public class HttpHelper implements IHttpHelper {
 	@Override
 	public Document getHtmlDocument(String url) {
 		String res = openHttpGetConnection(url);
-		
+	
 		if(res != null) {
 			Document doc = Jsoup.parse(res);
 			

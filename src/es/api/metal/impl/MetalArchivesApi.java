@@ -13,6 +13,9 @@ import org.jsoup.select.Elements;
 import es.api.metal.delarations.IHttpHelper;
 import es.api.metal.delarations.IMetalArchivesApi;
 import es.api.metal.dto.AlbumDTO;
+import es.api.metal.dto.ArtistDTO;
+import es.api.metal.dto.BandDTO;
+import es.api.metal.dto.TrackDTO;
 import es.api.metal.http.HttpHelper;
 
 /**
@@ -28,9 +31,10 @@ public class MetalArchivesApi implements IMetalArchivesApi
 	}
 	
 	@Override
-	public List<AlbumDTO> getAlbums(String id) {
-		String uri = "http://www.metal-archives.com/band/discography/id/"+id;
+	public List<AlbumDTO> getAlbumsFromBand(String idBand) {
+		String uri = "http://www.metal-archives.com/band/discography/id/"+idBand;
 		Document doc = http.getHtmlDocument(uri);
+		
 		List<AlbumDTO> albums = null;
 		
 		if(doc != null) {
@@ -53,5 +57,41 @@ public class MetalArchivesApi implements IMetalArchivesApi
 		}
 		
 		return albums;
+	}
+
+	@Override
+	public List<ArtistDTO> getInfoArtists(String urlArtist) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<TrackDTO> getTracksFromAlbum(String urlAlbum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getLyricsFromTrack(String idTrack) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void getMoreInfoBand(BandDTO band) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<BandDTO> searchBand(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ArtistDTO> searchArtist(String name) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
