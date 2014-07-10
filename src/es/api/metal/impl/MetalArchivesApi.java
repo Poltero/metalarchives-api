@@ -49,6 +49,7 @@ public class MetalArchivesApi implements IMetalArchivesApi
 				AlbumDTO album = new AlbumDTO();
 				
 				album.setName(cols.get(0).getElementsByTag("a").html());
+				album.setUrlInfo(cols.get(0).getElementsByTag("a").attr("href"));
 				album.setType(cols.get(1).html());
 				album.setYear(cols.get(2).html());
 				

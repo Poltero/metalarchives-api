@@ -28,6 +28,7 @@ public class Main {
 			System.out.println("Nombre: " + a.getName());
 			System.out.println("Genere: " + a.getType());
 			System.out.println("Year: " + a.getYear());
+			System.out.println("Url: " + a.getUrlInfo());
 		}
 	}
 
