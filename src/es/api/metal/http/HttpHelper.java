@@ -15,6 +15,8 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
+import com.google.gson.JsonArray;
+
 import es.api.metal.delarations.IHttpHelper;
 
 /**
@@ -58,6 +60,12 @@ public class HttpHelper implements IHttpHelper {
 			return doc;
 		}
 		
+		return null;
+	}
+
+	@Override
+	public JsonArray getObjectJson(String url) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
